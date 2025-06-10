@@ -1,48 +1,46 @@
-// function mostrarOla() {
-//     let nome = document.getElementById("nome").value;
-//     document.getElementById("resposta").innerHTML = "Olá " + nome;
-// }
+document.addEventListener('DOMContentLoaded', function() {
+  const display = document.getElementById('display');
 
-// const mostrarOla = () => {
-//     let nome = document.getElementById("nome").value;
-//      document.getElementById("resposta").innerHTML = "Olá " + nome;
-// }
+  let valorAtual = ''; 
 
-// const mostrar = document.getElementById("mostrar");
-// mostrar.addEventListener("click", mostrarOla)
+  function atualizarDisplay(num) {
+      display.num = num;
+  }
 
+  function numDisplay(num) {
+    valorAtual += num;
+      updateDisplay(valorAtual);
+  }
 
+  function calcular() {
+      try {
+          valorAtual = eval(valorAtual).toString();
+          atualizarDisplay(valorAtual);
+      } catch (e) {
+        atualizarDisplay('Erro');
+        valorAtual = '';
+      }
+  }
+ 
+  function limparDisplay() {
+    valorAtual = '';
+    atualizarDisplay(valorAtual);
+  }
 
-let display = document.getElementById('display');
-function adicionarNumero(numero) {
-  display.value += numero;
-}
-
-function adicionarOperador(operador) {
-  display.value += operador;
-}
-
-function limparVisor() {
-  display.value = '';
-}
-
-function calcularResultado() {
-    display.value = eval(display.value);  
-}
-
-document.getElementById('btn7').addEventListener('click', () => adicionarNumero('7'));
-document.getElementById('btn8').addEventListener('click', () => adicionarNumero('8'));
-document.getElementById('btn9').addEventListener('click', () => adicionarNumero('9'));
-document.getElementById('btn4').addEventListener('click', () => adicionarNumero('4'));
-document.getElementById('btn5').addEventListener('click', () => adicionarNumero('5'));
-document.getElementById('btn6').addEventListener('click', () => adicionarNumero('6'));
-document.getElementById('btn1').addEventListener('click', () => adicionarNumero('1'));
-document.getElementById('btn2').addEventListener('click', () => adicionarNumero('2'));
-document.getElementById('btn3').addEventListener('click', () => adicionarNumero('3'));
-document.getElementById('btn0').addEventListener('click', () => adicionarNumero('0'));
-document.getElementById('bntDivisao').addEventListener('click', () => adicionarOperador('/'));
-document.getElementById('btnSoma').addEventListener('click', () => adicionarOperador('+'));
-document.getElementById('btnSub').addEventListener('click', () => adicionarOperador('-'));
-document.getElementById('btnMultiplicar').addEventListener('click', () => adicionarOperador('*'));
-document.getElementById('btnC').addEventListener('click', limparVisor);
-document.getElementById('btnIgual').addEventListener('click', calcularResultado);
+  document.getElementById('btn1').addEventListener('click', () => appendNumber('1'));
+  document.getElementById('btn2').addEventListener('click', () => appendNumber('2'));
+  document.getElementById('btn3').addEventListener('click', () => appendNumber('3'));
+  document.getElementById('btn4').addEventListener('click', () => appendNumber('4'));
+  document.getElementById('btn5').addEventListener('click', () => appendNumber('5'));
+  document.getElementById('btn6').addEventListener('click', () => appendNumber('6'));
+  document.getElementById('btn7').addEventListener('click', () => appendNumber('7'));
+  document.getElementById('btn8').addEventListener('click', () => appendNumber('8'));
+  document.getElementById('btn9').addEventListener('click', () => appendNumber('9'));
+  document.getElementById('btn0').addEventListener('click', () => appendNumber('0'));
+  document.getElementById('btnSoma').addEventListener('click', () => appendNumber('+'));
+  document.getElementById('btnSub').addEventListener('click', () => appendNumber('-'));
+  document.getElementById('btnDivisao').addEventListener('click', () => appendNumber('/'));
+  document.getElementById('btnMultiplicar').addEventListener('click', () => appendNumber('*'));
+  document.getElementById('btnIgual').addEventListener('click', calculate);
+  document.getElementById('btnC').addEventListener('click', clearDisplay);
+});
