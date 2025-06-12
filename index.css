@@ -3,12 +3,18 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculadora {
   background: #fff0f5;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  padding: 2rem;
+  max-width: 350px;
+  width: 100%;
 }
 
 #display {
@@ -16,20 +22,26 @@ body {
   border: 2px solid #e91e63;
   color: #e91e63;
   border-radius: 10px;
+  font-size: 1.8rem;
+  text-align: right;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  user-select: none;
 }
 
 button {
   font-size: 1.3rem;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  user-select: none;
 }
 
 button:hover {
-  background-color: #e91e63 ;
+  background-color: #e91e63;
   color: white;
 }
 
 button:active {
-  background-color: #c2185b ;
-  color: white ;
+  background-color: #c2185b;
+  color: white;
 }
