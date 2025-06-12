@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(135deg, #ffe6f0, #ffd1dc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+.calculadora {
+  background: #fff0f5;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+#display {
+  background-color: #fce4ec;
+  border: 2px solid #e91e63;
+  color: #e91e63;
+  border-radius: 10px;
+}
+
+button {
+  font-size: 1.3rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e91e63 ;
+  color: white;
+}
+
+button:active {
+  background-color: #c2185b ;
+  color: white ;
+}
